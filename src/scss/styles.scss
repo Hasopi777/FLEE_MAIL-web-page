@@ -1,0 +1,44 @@
+//variable overides
+$body-bg: white;
+
+$theme-colors: (
+    "primary": #ededed
+
+);
+.navbar-dark .navbar-brand{
+    color: #FFBF29 !important;
+}
+
+.navbar-dark .navbar-brand:hover{
+    color: black !important;
+    transition-duration: 300ms;
+}
+
+.navbar-dark .navbar-nav .nav-link{
+    color: #FFBF29 !important;
+    font-size: larger;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover{
+    color: black !important;
+    transition-duration: 300ms;
+}
+
+.jumbotron{
+    background-color: #ffffff !important;
+    border-top: 3px solid rgb(219, 219, 219);
+}
+
+.btn-lg, .btn-group-lg > .btn{
+    color: white !important;
+    background-color: #FFBF29 !important;
+}
+
+
+// .devList{
+//     text-align: center;
+//     list-style: none;
+// }
+
+//bootstrap Sass files
+@import "node_modules/bootstrap/scss/bootstrap";

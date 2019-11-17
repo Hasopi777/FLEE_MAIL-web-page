@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+    <head>
+        <title>How it works</title>
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800">
+        <link rel='stylesheet' href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/css/bootstrap.css">
+        <link rel="stylesheet" href="/css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+                <a class="navbar-brand" href="index.html">
+                    <img src="/assets/icon.svg" width="50" height="30" class="d-inline-block align-top" alt="">
+                    FLEE-MAIL
+                </a>
+                
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Further Information
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="whatIsME.html">What is a mass email?</a>
+                                <a class="dropdown-item" href="howToCheck.html">How do we detect it?</a>
+                            </div>
+                        </li>
+                        <li class="nav-item"></li>
+                            <a class="nav-link" href="contact.html">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <div class="row mt-sm-4 mt-md-o">
+                <div class="col-sm-12 col-md-8 text-sm-center text-md-left">
+                    <h1 id="how-do-we-detect-mass-email">How do we detect Mass Email?</h1>
+                    <p class="lead">An explanation of how we check if your mail is a mass email </p>
+
+                    <p>Flee-Mail relies on a database of known emails that can only be accessed by the backend server. Whenever a user of the Flee-Mail Gmail Add-on clicks on the Flee-Mail
+                         icon to check if an email is genuine or not, that email<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> is sent to our backend 
+                         server over an encrypted connection. The server then stores the email in the database and checks if the database contains any other emails from the same sender that 
+                         also have the same content. If any such emails are found, the server sends the number of matches back to the user’s computer, where it is displayed in the Addon sidebar.
+                    </p>
+                    <p>Flee-Mail is especially designed to detect emails that have been slightly personalised in order to make them appear more genuine than they actually are. This means that 
+                        the backend server has to figure out whether two emails, that are not exactly the same, are really different emails, or whether they still <em>basically</em> contain the
+                         same content. We achieve this by measuring the overlap between any two emails. If this overlap is above 90 %, we conclude that two emails are <em>basically the same</em> 
+                         and report them as matches to the user. If the overlap is below 90 %, we view them as different emails and don’t count the email in question as a match.
+                    </p>
+
+                    <p>If you are quite technical, you might be interested to hear that we use the <a href="https://en.wikipedia.org/wiki/Levenshtein_distance">Levenshtein Distance Algorithm</a> 
+                        to measure the overlap, but don’t worry if you haven’t heard of it. It is a rather straightforward measure. Levenshtein Distance simply calculates the minimum number of words
+                        <a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> one needs to change to transform some text — let’s call it text A — into some other text 
+                        — which we might call text B. If the number of changes is low, the overlap between the texts is high and vice versa.
+                    </p>
+                    <br>
+
+                    <p class="lead" id="can-you-give-me-an-example">Can you give me an example?</p>
+                    <p>Sure thing! We might have some text A that is 100 words long, and calculating the Levenshtein Distance we find that we can transform it into text B if we remove 5 words and insert 5 
+                        different words in their stead. That is 5 changes in 100 words, or, in other words, 5 % of differing text. The overlap would thus be the complement: 95 % of text that 
+                        doesn’t have to be changed. Since this percentage is quite high and exceeds our threshold of 90 %, we would conclude that text A and text B are pretty much the same text
+                        and report back to the user that we found a match.
+                    </p>
+                    <p>Now let’s imagine we have two more texts, let’s call them text C and text D. Like text A, text C is also 100 words long. We compare texts C and D and find that, in order 
+                        to transform text C into text D, we would need to remove 60 words and insert 80 different words in their stead. The overlap, in this case, would only be 30 %. Since this
+                        overlap doesn’t exceed our threshold of 90 %, we conclude that, while there are slight similarities between the two texts, they are not <em>the same</em>. Therefore, we 
+                        would not count text D as a match for text C.
+                    </p>
+
+                    <section class="footnotes" role="doc-endnotes">
+                        <hr/>
+                        <ol>
+                            <li id="fn1" role="doc-endnote">
+                                <p>In order to allow the backend processing, the Addon transfers the sender and recipient addresses as well as the 
+                                email’s timestamp and content.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a>
+                                </p>
+                            </li>
+                            <li id="fn2" role="doc-endnote">
+                                <p>Levenshtein Distance is more commonly used with characters rather than words, but we decided words would make more sense in our case. If we 
+                                    just considered characters, the difference between “house” and “mouse” would be 2, since you just need to remove one character and add another one. 
+                                    The difference between “house” and “mansion”, on the other hand, would be 10, since you need to remove 4 characters (“h”, “o”, “u” and “e”) and add 6 new ones 
+                                    (“m”, “a”, “n”, “i”, “o” and “n”) — actually, we might also remove “h”, “u”, “s” and “e” and add “m”, “a”, “n”, “s”, “i” and “n”, but that would still be 4 deletions 
+                                    and 6 insertions, so it wouldn’t make a difference. While this sort of reasoning is great when dealing with spelling errors, it doesn’t make that much sense for 
+                                    comparing the content of emails. We thus calculate the number of words that need to be replaced, rather than the number of characters.
+                                    <a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a>
+                                </p>
+                            </li>
+                        </ol>
+                    </section>
+                </div>
+            </div>
+        </div>
+
+        <script src="/js/jquery.min.js"></script>
+        <script src="/js/popper.min.js"></script>
+        <script src="/js/bootstrap.min.js"></script>
+
+    </body>
+</html>
