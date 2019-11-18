@@ -67,7 +67,7 @@
                     </p>
                     <br>
 
-                    <p class="lead" id="can-you-give-me-an-example">Can you give me an example?</p>
+                    <h2 id="can-you-give-me-an-example">Can you give me an example?</h2><br>
                     <p>Sure thing! We might have some text A that is 100 words long, and calculating the Levenshtein Distance we find that we can transform it into text B if we remove 5 words and insert 5 
                         different words in their stead. That is 5 changes in 100 words, or, in other words, 5 % of differing text. The overlap would thus be the complement: 95 % of text that 
                         doesn’t have to be changed. Since this percentage is quite high and exceeds our threshold of 90 %, we would conclude that text A and text B are pretty much the same text
@@ -78,7 +78,7 @@
                         overlap doesn’t exceed our threshold of 90 %, we conclude that, while there are slight similarities between the two texts, they are not <em>the same</em>. Therefore, we 
                         would not count text D as a match for text C.
                     </p>
-
+                    <br>
                     <section class="footnotes" role="doc-endnotes">
                         <hr/>
                         <ol>
@@ -101,6 +101,18 @@
                     </section>
                 </div>
             </div>
+
+            <footer class="page-footer font-small blue">
+                <div id="footerPlaceHolder">
+                    <script src="//code.jquery.com/jquery.min.js"></script>
+                    <script>
+                        $.get("footer.html", function(data){
+                            $("#footerPlaceHolder").replaceWith(data);
+                        });
+                    </script>
+                </div>
+            </footer>
+            
         </div>
 
         <script src="/js/jquery.min.js"></script>

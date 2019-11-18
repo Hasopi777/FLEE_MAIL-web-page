@@ -49,42 +49,66 @@
                 <p class="lead">Your #1 solution for detecting mass emails in your inbox</p>
                 <br>
                 <p class="lead">
-                    <a class="btn btn-primary btn-lg" href="#" role="button">Learn to Install</a>
+                    <a class="btn btn-lg" href="#" role="button">Learn to Install</a>
                 </p>
             </div>
 
             <div class="row">
                 <div class="col-sm-12 col-md-4 d-flex align-items-stretch"><!--add hyphen plus number after column to change size of card-->
-                    <div class="card mb-4">
+                    <div class="card card1 mb-4">
                         <div class="card-body text-center">
                             <h5 class="card-title">You’ve had enough!</h5>
                             <p class="card-text">Every day, you’re bombarded with emails from people who want a piece of you and your time. But are they genuine?
                                     Maybe you’re a college professor, the founder of a startup or a company recruiter. Wouldn’t it be great if you could tell which emails you receive are genuine, and which ones have been sent to hundreds of other contacts, and not just you personally!
                             </p>
-                            <a href="#" class="card-link" style="color: #FFBF29 ;">Another link</a>
+                            <div class="cardBtn2">
+                                <p class="lead">
+                                    <a class="btn btn-lg" href="whatIsME.html" role="button">Learn more about Mass Emails</a>
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-sm-12 col-md-4  d-flex align-items-stretch">
-                    <div class="card mb-4">
+                    <div class="card card2 mb-4">
                         <div class="card-body text-center">
                             <h5 class="card-title">Meet our little friend...</h5>
                             <p class="card-text">Flee-Mail is a simple yet beautiful tool that fits in snugly to your Gmail inbox. Simply install our add-on, and when you receive an email, click on the icon to validate whether the email is genuine or not. That’s it!</p>
-                            <br><br><br><a href="#" class="card-link" style="color: #FFBF29;">Another link</a>
+                            <br><br><br>
+                            <div class="cardBtn2">
+                                <p class="lead">
+                                    <a class="btn btn-lg" href="howToCheck.html" role="button">Learn how we do it</a>
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-sm-12 col-md-4  d-flex align-items-stretch">
-                    <div class="card mb-4">
+                    <div class="card card3 mb-4">
                         <div class="card-body text-center">
                             <h5 class="card-title">Install me now!</h5>
                             <p class="card-text">Click the link below to install our G-mail addon. We know you’ll love it!</p>
-                            <a href="#" class="card-link" style="color: #FFBF29;">Install</a>
+                            <br><br><br><br><br><br><br>
+                            <div class="cardBtn2">
+                                <p class="lead">
+                                    <a class="btn btn-lg" href="#" role="button">Install</a>
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
+            <footer class="page-footer font-small blue">
+                <div id="footerPlaceHolder">
+                    <script src="//code.jquery.com/jquery.min.js"></script>
+                    <script>
+                        $.get("footer.html", function(data){
+                            $("#footerPlaceHolder").replaceWith(data);
+                        });
+                    </script>
+                </div>
+            </footer>
 
 
         </div>

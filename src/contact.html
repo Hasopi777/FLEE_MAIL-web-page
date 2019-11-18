@@ -57,40 +57,40 @@
             </div> -->
             <br><br>
             <div class="row">
-                <div class="col-sm-12 col-md-4"><!--add hyphen plus number after column to change size of card-->
-                    <div class="card mb-4 bg-info text-white">
+                <div class="col-sm-12 col-md-12"><!--add hyphen plus number after column to change size of card-->
+                    <div class="card devCard1 mb-4">
                         <div class="card-body text-center">
                             <h5 class="devName">Johnny White</h5>
                             <a href="#" class="card-link">GitHub</a>
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-12 col-md-4">
-                    <div class="card mb-4 bg-warning text-white">
+                <div class="col-sm-12 col-md-12">
+                    <div class="card devCard2 mb-4 text-white">
                         <div class="card-body text-center">
                             <h5 class="devName">Dearbhla Boylan</h5>
                             <a href="#" class="card-link">GitHub</a>
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-12 col-md-4">
-                    <div class="card mb-4 bg-danger text-white">
+                <div class="col-sm-12 col-md-12">
+                    <div class="card devCard3 mb-4 text-white">
                         <div class="card-body text-center">
                             <h5 class="devName">Lydia Thomas</h5>
                             <a href="#" class="card-link">GitHub</a>
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-12 col-md-6 ">
-                    <div class="card mb-4 bg-dark text-white ">
+                <div class="col-sm-12 col-md-12 ">
+                    <div class="card devCard4 mb-4 text-white ">
                         <div class="card-body text-center">
                             <h5 class="devName">Frank Seifferth</h5>
                             <a href="#" class="card-link">GitHub</a>
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-12 col-md-6">
-                    <div class="card mb-4 bg-success text-white">
+                <div class="col-sm-12 col-md-12">
+                    <div class="card devCard5 mb-4 text-white">
                         <div class="card-body text-center">
                             <h5 class="devName">Hasan Opiev</h5>
                             <a href="#" class="card-link">GitHub</a>
@@ -99,4 +99,15 @@
                 </div>
                 
             </div>
+
+            <footer class="page-footer font-small blue">
+                <div id="footerPlaceHolder">
+                    <script src="//code.jquery.com/jquery.min.js"></script>
+                    <script>
+                        $.get("footer.html", function(data){
+                            $("#footerPlaceHolder").replaceWith(data);
+                        });
+                    </script>
+                </div>
+            </footer>
         </div>

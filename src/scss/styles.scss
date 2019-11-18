@@ -2,9 +2,10 @@
 $body-bg: white;
 
 $theme-colors: (
-    "primary": #ededed
+    "primary": #0570fc
 
 );
+
 .navbar-dark .navbar-brand{
     color: #FFBF29 !important;
 }
@@ -15,8 +16,8 @@ $theme-colors: (
 }
 
 .navbar-dark .navbar-nav .nav-link{
-    color: #FFBF29 !important;
-    font-size: larger;
+    color: white !important;
+    font-size: medium;
 }
 
 .navbar-dark .navbar-nav .nav-link:hover{
@@ -25,13 +26,105 @@ $theme-colors: (
 }
 
 .jumbotron{
-    background-color: #ffffff !important;
-    border-top: 3px solid rgb(219, 219, 219);
+    background-color: white !important;
+    border-top: 3px solid white;
+    background-image: url("/assets/icon.svg");
+    background-repeat: no-repeat;
 }
 
 .btn-lg, .btn-group-lg > .btn{
     color: white !important;
+    background-color: #0570fc!important;
+}
+
+.btn-lg:hover{
+    color: black !important;
+    background-color:#0570fc!important;
+}
+
+.card1{
     background-color: #FFBF29 !important;
+}
+
+.card1:hover{
+    color: black;
+    background-color: white !important;
+    transition-duration: 300ms;
+}
+
+.card2{
+    background-color: #FFBF29!important;
+}
+
+.card2:hover{
+    color: black;
+    background-color: white!important;
+    transition-duration: 300ms;
+}
+
+.card3{
+    background-color: #FFBF29 !important;
+}
+
+.card3:hover{
+    color: black;
+    background-color: white !important;
+    transition-duration: 300ms;
+}
+
+.card5{
+    background-color: aqua;
+}
+
+.footnotes{
+    font-size: small;
+    font-style: italic;
+}
+
+////contact page
+.devCard1{
+    background-color: rgb(247, 170, 3) !important;
+}
+
+.devCard1:hover{
+    background-color: rgb(0, 255, 157) !important;
+    transition-duration: 300ms;
+}
+
+.devCard2{
+    background-color: gold !important;
+}
+
+.devCard2:hover{
+    background-color: rgb(0, 255, 157) !important;
+    transition-duration: 300ms;
+}
+
+.devCard3{
+    background-color: deepskyblue!important;
+}
+
+.devCard3:hover{
+    background-color: rgb(0, 255, 157) !important;
+    transition-duration: 300ms;
+}
+
+.devCard4{
+    background-color: palevioletred !important;
+}
+
+.devCard4:hover{
+    background-color: rgb(0, 255, 157) !important;
+    transition-duration: 300ms;
+}
+
+.devCard5{
+    background-color: red !important;
+}
+
+.devCard5:hover{
+    background-color: rgb(0, 255, 157) !important;
+    transition-duration: 300ms;
 }
 
 
